@@ -19,10 +19,12 @@ class HistoryViewController: UIViewController {
 
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
         
-        for index in 0...history.count - 1 {
-            let label = UILabel(frame: CGRect(x: 0, y: index * 30, width: Int(self.view.frame.size.width), height: 30))
-            label.text = history[index]
-            scrollView.addSubview(label)
+        if (history.count > 0) {
+            for index in 0...history.count - 1 {
+                let label = UILabel(frame: CGRect(x: 0, y: index * 30, width: Int(self.view.frame.size.width), height: 30))
+                label.text = history[index]
+                scrollView.addSubview(label)
+            }
         }
         // Do any additional setup after loading the view.
     }
